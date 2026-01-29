@@ -1,38 +1,69 @@
-body {
-    margin: 0;
-    padding: 0;
+/* General Layout */
+body { 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Open Sans', sans-serif; 
 }
 
-#map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+#map { 
+    position: absolute; 
+    top: 0; 
+    bottom: 0; 
+    width: 100%; 
 }
 
-/* the layout of the legend panel */
+/* Titles - Added text-shadow so white text is visible on light maps */
+#title, #subtitle {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    margin-left: 20px;
+    color: white;
+    text-shadow: 2px 2px 4px #000; /* This makes the text pop! */
+}
+
+#title { 
+    margin-top: 20px; 
+    font-size: 25pt; 
+}
+
+#subtitle { 
+    margin-top: 70px; 
+    font-size: 15pt; 
+}
+
+/* Legend Container */
 #legend {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 110px;
-    background: #fff;
+    position: absolute; 
+    bottom: 0; 
+    right: 0; 
+    width: 150px;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
     margin-right: 20px;
-    margin-bottom: 40px;
-    padding: 10px 20px 10px 10px;
+    margin-bottom: 40px; 
+    padding: 10px; 
     border-radius: 3px;
-    text-align: center;
-    font-family: 'Open Sans', sans-serif;
+    text-align: left; 
+    line-height: 24px; 
+    color: #333;
 }
 
-/* each line for a break */
+/* --- FOR MAP 1 (Choropleth/Rates) --- */
+.legend-key { 
+    display: inline-block; 
+    width: 20px; 
+    height: 20px; 
+    margin-right: 5px; 
+    vertical-align: middle;
+}
+
+/* --- FOR MAP 2 (Proportional Symbols/Counts) --- */
 .break {
     position: relative;
     margin: 0px;
     padding: 0px;
 }
 
-/* basic style for a dot/circle */
 .dot {
     display: inline-block;
     margin-top: 5px;
@@ -40,7 +71,6 @@ body {
     opacity: 0.6;
 }
 
-/* the label for the dot */
 .dot-label {
     position: absolute;
     top: 0;
@@ -48,30 +78,8 @@ body {
     font-style: italic;
 }
 
-/* the text color of a hyper link */
+/* Style for links in legend */
 a {
-    color: black
-}
-
-#title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 20px;
-    margin-left: 20px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 25pt;
-    color: white
-}
-
-
-#subtitle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin-top: 70px;
-    margin-left: 190px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 15pt;
-    color: white
+    color: black;
+    text-decoration: underline;
 }
