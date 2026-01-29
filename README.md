@@ -11,10 +11,10 @@ This repository contains two interactive thematic maps visualizing COVID-19 data
 
 ## Screenshots
 ### Map 1: Rates
-![Map 1 Screenshot](img/case_rates.png)
+![Map 1 Screenshot](lab03/img/case_rates.png)
 
 ### Map 2: Counts
-![Map 2 Screenshot](img/case_counts.png)
+![Map 2 Screenshot](lab03/img/case_counts.png)
 
 ## Primary Functions
 * **Dynamic Legend Generation:** The legends for both maps are built dynamically using JavaScript loops that iterate through the data classification "grades" and "colors."
