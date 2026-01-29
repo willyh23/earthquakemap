@@ -2,14 +2,14 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoid2lsbHloMjMiLCJhIjoiY21obDBjN2ttMW1kdDJxcHI3a
 
 let map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/dark-v10', // Dark background makes circles pop
+    style: 'mapbox://styles/mapbox/dark-v10', 
     zoom: 3.5,
     minZoom: 3,
     center: [-98, 39],
     projection: { name: 'albers' }
 });
 
-// Update these grades based on your actual data range
+
 const grades = [1000, 5000, 10000],
       colors = ['rgb(208,209,230)', 'rgb(103,169,207)', 'rgb(1,108,89)'],
       radii = [4, 10, 20];
@@ -25,18 +25,18 @@ map.on('load', () => {
         'type': 'circle',
         'source': 'covid-counts',
         'paint': {
-            // Increase radius based on case count
+            
             'circle-radius': [
                 'step',
-                ['get', 'cases'], // CHANGE THIS if your property is not 'cases'
+                ['get', 'cases'], 
                 radii[0],
                 grades[1], radii[1],
                 grades[2], radii[2]
             ],
-            // Change color based on case count
+            
             'circle-color': [
                 'step',
-                ['get', 'cases'], // CHANGE THIS if your property is not 'cases'
+                ['get', 'cases'], 
                 colors[0],
                 grades[1], colors[1],
                 grades[2], colors[2]
@@ -47,7 +47,7 @@ map.on('load', () => {
         }
     });
 
-    // Popup on click
+   
     map.on('click', 'covid-counts-point', (event) => {
         new mapboxgl.Popup()
             .setLngLat(event.features[0].geometry.coordinates)
@@ -57,7 +57,7 @@ map.on('load', () => {
     });
 });
 
-// Legend for Proportional Symbols
+
 const legend = document.getElementById('legend');
 var labels = ['<strong>Total Cases</strong>'], vbreak;
 
